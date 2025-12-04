@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 2 Field Trip: Our Environment & Our Work</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Font Settings */
+        body { font-family: 'Nunito', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Fredoka', sans-serif; }
+
+        /* Chart Container Styling - Mandatory Requirements */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Max width constraint */
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px; /* Base height */
+            max-height: 400px; /* Max height constraint */
+        }
+        
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+
+        /* Custom Scrollbar for a polished look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0ea5e9; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0284c7; 
+        }
+
+        /* Timeline Connector Line */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 4px;
+            background-color: #e2e8f0;
+            z-index: 0;
+        }
+    </style>
+    <!-- 
+        Palette Used: "Energetic & Playful"
+        Primary Blue: #0ea5e9 (Sky-500)
+        Accent Yellow: #eab308 (Yellow-500)
+        Accent Orange: #f97316 (Orange-500)
+        Text: #0f172a (Slate-900)
+        
+        NO SVG USED. NO MERMAID JS USED.
+    -->
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-sky-400 to-blue-500 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2 tracking-wide">Grade 2 Coastal Explorer</h1>
+            <p class="text-xl md:text-2xl font-light opacity-90">Field Trip: Our Environment & Our Work</p>
+            <div class="mt-4 inline-block bg-white text-blue-600 font-bold py-2 px-6 rounded-full shadow-md">
+                📅 Wednesday, December 10, 2025
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="container mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+        <!-- Intro Card -->
+        <section class="lg:col-span-12">
+            <div class="bg-white rounded-2xl shadow-md p-6 border-l-8 border-yellow-400">
+                <h2 class="text-2xl font-bold text-slate-800 mb-2">🌍 The Mission</h2>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    We are heading to the Tainan Coast to investigate a big question: 
+                    <span class="font-bold text-sky-600">How does nature affect our jobs?</span>
+                    From protecting rare birds to farming fish and guiding eco-tours, we will see how a healthy environment creates work for our community.
+                </p>
+            </div>
+        </section>
+
+        <!-- Itinerary Section (Timeline) -->
+        <section class="lg:col-span-7 flex flex-col gap-6">
+            <h2 class="text-3xl font-bold text-slate-800 border-b-4 border-sky-200 inline-block w-full pb-2">🚀 The Journey</h2>
+            
+            <div class="relative timeline-line pl-2">
+                <!-- Stop 1 -->
+                <div class="relative z-10 mb-8 pl-12">
+                    <div class="absolute left-0 top-1 w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg text-lg">1</div>
+                    <div class="bg-white rounded-xl shadow-sm p-5 border border-slate-100 hover:shadow-md transition-shadow">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold text-slate-800">Black-faced Spoonbill Reserve</h3>
+                            <span class="bg-orange-100 text-orange-700 text-xs font-bold px-2 py-1 rounded">09:00 AM</span>
+                        </div>
+                        <p class="text-slate-600 mb-2"><strong>Theme:</strong> Conservation Heroes</p>
+                        <p class="text-sm text-slate-500">We meet the people working to save endangered birds. Their job is to keep the wetlands clean and safe.</p>
+                    </div>
+                </div>
+
+                <!-- Stop 2 -->
+                <div class="relative z-10 mb-8 pl-12">
+                    <div class="absolute left-0 top-1 w-10 h-10 bg-sky-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg text-lg">2</div>
+                    <div class="bg-white rounded-xl shadow-sm p-5 border border-slate-100 hover:shadow-md transition-shadow">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold text-slate-800">Taijiang National Park Visitor Center</h3>
+                            <span class="bg-sky-100 text-sky-700 text-xs font-bold px-2 py-1 rounded">10:00 AM</span>
+                        </div>
+                        <p class="text-slate-600 mb-2"><strong>Theme:</strong> Sustainable Fishing</p>
+                        <p class="text-sm text-slate-500">Exploring how healthy water supports the jobs of local fishermen and oyster farmers (Aquaculture).</p>
+                    </div>
+                </div>
+
+                <!-- Stop 3 -->
+                <div class="relative z-10 mb-8 pl-12">
+                    <div class="absolute left-0 top-1 w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg text-lg">3</div>
+                    <div class="bg-white rounded-xl shadow-sm p-5 border border-slate-100 hover:shadow-md transition-shadow">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold text-slate-800">Sicao Green Tunnel</h3>
+                            <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">Boat Trip</span>
+                        </div>
+                        <p class="text-slate-600 mb-2"><strong>Theme:</strong> Eco-Tourism</p>
+                        <p class="text-sm text-slate-500">Riding the boat to see how mangrove forests protect the land and create tourism jobs.</p>
+                    </div>
+                </div>
+
+                <!-- Stop 4 -->
+                <div class="relative z-10 mb-8 pl-12">
+                    <div class="absolute left-0 top-1 w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-white font-bold shadow-lg text-lg">4</div>
+                    <div class="bg-white rounded-xl shadow-sm p-5 border border-slate-100 hover:shadow-md transition-shadow">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold text-slate-800">Lunch</h3>
+                            <span class="bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded">Yuguang Island</span>
+                        </div>
+                        <p class="text-slate-600 mb-2"><strong>Location:</strong> Yuan Yuan Restaurant</p>
+                        <p class="text-sm text-slate-500">Refueling with local food!</p>
+                    </div>
+                </div>
+
+                <!-- Stop 5 -->
+                <div class="relative z-10 pl-12">
+                    <div class="absolute left-0 top-1 w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg text-lg">5</div>
+                    <div class="bg-white rounded-xl shadow-sm p-5 border border-slate-100 hover:shadow-md transition-shadow">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold text-slate-800">Eternal Golden Castle</h3>
+                            <span class="bg-indigo-100 text-indigo-700 text-xs font-bold px-2 py-1 rounded">History</span>
+                        </div>
+                        <p class="text-slate-600 mb-2"><strong>Theme:</strong> History & Defense</p>
+                        <p class="text-sm text-slate-500">Connecting the past to the present. How the coast has always been vital to Tainan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sidebar: Data & Logistics -->
+        <aside class="lg:col-span-5 flex flex-col gap-8">
+            
+            <!-- Chart 1: Conservation Context -->
+            <div class="bg-white rounded-2xl shadow-md p-6">
+                <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center">
+                    <span class="bg-orange-100 text-orange-600 p-2 rounded-lg mr-3">📈</span>
+                    Why We Visit: The Spoonbill Comeback
+                </h3>
+                <p class="text-sm text-slate-500 mb-4">
+                    The work of conservationists is effective! See how the number of Black-faced Spoonbills has grown because humans protected their environment.
+                </p>
+                <div class="chart-container">
+                    <canvas id="spoonbillChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 2: Economic Context -->
+            <div class="bg-white rounded-2xl shadow-md p-6">
+                <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center">
+                    <span class="bg-sky-100 text-sky-600 p-2 rounded-lg mr-3">🎣</span>
+                    Jobs of the Wetland
+                </h3>
+                <p class="text-sm text-slate-500 mb-4">
+                    The wetlands aren't just for birds. They support many different types of local work.
+                </p>
+                <div class="chart-container">
+                    <canvas id="jobsChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Logistics Card -->
+            <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl shadow-md p-6 border border-orange-100">
+                <h3 class="text-xl font-bold text-slate-800 mb-4">🎒 Field Trip Essentials</h3>
+                
+                <!-- Cost -->
+                <div class="mb-6 flex items-center justify-between bg-white p-4 rounded-xl shadow-sm">
+                    <div>
+                        <p class="text-sm text-slate-500 font-bold uppercase">Total Cost</p>
+                        <p class="text-3xl font-bold text-green-600">NT$300</p>
+                    </div>
+                    <div class="text-right text-xs text-slate-400">
+                        Includes<br>Tickets & Lunch
+                    </div>
+                </div>
+
+                <!-- Checklist -->
+                <h4 class="font-bold text-slate-700 mb-3">Student Packing List:</h4>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-white p-3 rounded-lg shadow-sm flex items-center space-x-2">
+                        <span class="text-2xl">🧢</span>
+                        <span class="text-sm font-semibold text-slate-600">Hat</span>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg shadow-sm flex items-center space-x-2">
+                        <span class="text-2xl">🧥</span>
+                        <span class="text-sm font-semibold text-slate-600">Coat</span>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg shadow-sm flex items-center space-x-2">
+                        <span class="text-2xl">💧</span>
+                        <span class="text-sm font-semibold text-slate-600">2x Water</span>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg shadow-sm flex items-center space-x-2">
+                        <span class="text-2xl">🥪</span>
+                        <span class="text-sm font-semibold text-slate-600">Snack</span>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- Footer -->
+        <footer class="lg:col-span-12 mt-4 text-center text-slate-400 text-sm">
+            <p>Grade 2 Field Trip Coordinator • December 2025</p>
+            <p class="mt-1">Let's learn how to care for our coast!</p>
+        </footer>
+
+    </main>
+
+    <script>
+        // --- Chart 1: Spoonbill Population Trend (Line Chart) ---
+        // Data context: Illustrating the result of "Conservation Work"
+        const ctxSpoonbill = document.getElementById('spoonbillChart').getContext('2d');
+        
+        // Label wrapping logic for Chart.js
+        function wrapLabel(str, maxLen) {
+            if (str.length <= maxLen) return str;
+            const words = str.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + 1 + words[i].length <= maxLen) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const spoonbillChart = new Chart(ctxSpoonbill, {
+            type: 'line',
+            data: {
+                labels: ['1990', '2000', '2010', '2020', '2024'],
+                datasets: [{
+                    label: 'Global Spoonbill Population',
+                    data: [296, 669, 2347, 4864, 6988], // Real approximate data points
+                    borderColor: '#f97316', // Orange-500
+                    backgroundColor: 'rgba(249, 115, 22, 0.1)',
+                    borderWidth: 3,
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: '#f97316',
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    tension: 0.3, // Smooth curve
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        labels: {
+                            font: { family: "'Nunito', sans-serif" }
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                        titleFont: { family: "'Nunito', sans-serif", size: 14 },
+                        bodyFont: { family: "'Nunito', sans-serif", size: 13 },
+                        padding: 12,
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { borderDash: [5, 5], color: '#e2e8f0' },
+                        title: { display: true, text: 'Number of Birds' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // --- Chart 2: Wetland Jobs Composition (Doughnut Chart) ---
+        // Data context: Illustrating the "Environment & Work" theme
+        const ctxJobs = document.getElementById('jobsChart').getContext('2d');
+
+        const jobsChart = new Chart(ctxJobs, {
+            type: 'doughnut',
+            data: {
+                // Wrap labels > 16 chars
+                labels: [
+                    wrapLabel('Aquaculture (Fish Farming)', 16),
+                    wrapLabel('Eco-Tourism (Boat Tours)', 16),
+                    wrapLabel('Conservation & Research', 16),
+                    wrapLabel('Traditional Fishing', 16)
+                ],
+                datasets: [{
+                    data: [45, 25, 20, 10], // Conceptual percentages for Grade 2 level understanding
+                    backgroundColor: [
+                        '#0ea5e9', // Sky-500
+                        '#22c55e', // Green-500
+                        '#eab308', // Yellow-500
+                        '#6366f1'  // Indigo-500
+                    ],
+                    borderWidth: 2,
+                    borderColor: '#ffffff',
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            usePointStyle: true,
+                            font: { family: "'Nunito', sans-serif" }
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                        bodyFont: { family: "'Nunito', sans-serif" },
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                },
+                layout: {
+                    padding: 10
+                }
+            }
+        });
+    </script>
+</body>
+</html>
