@@ -361,7 +361,17 @@
                 }]
             },
             options: {
-                responsive: true,
+                // --- INSERT THIS BLOCK ---
+                    layout: {
+                        padding: {
+                            bottom: 40 // Increase this number if needed
+                        }
+                    },
+                    // -------------------------
+
+                    responsive: true,
+                    maintainAspectRatio: false,
+    // ... all your existing scales and plugins options go below thisresponsive: true,
                 maintainAspectRatio: false,
                 plugins: {
                     legend: {
